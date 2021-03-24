@@ -104,14 +104,14 @@ public class Client {
 		int clientCount;	
 		Scanner in = new Scanner(System.in);
 		System.out.println("Please enter the number of clients you would like to test...");
-		System.out.println("Valid between the range 1 - 25");
+		System.out.println("Valid between the range 1 - 100");
 		
 		do {
 			
 			System.out.println("Please enter a number within the valid range...");
 			clientCount = in.nextInt();
 				
-		} while(clientCount <= 0 || clientCount > 25);
+		} while(clientCount <= 0 || clientCount > 100);
 		
 		return clientCount;
 	}
