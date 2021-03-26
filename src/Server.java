@@ -81,17 +81,16 @@ class ServerThread extends Thread {
 	public void run() {
 		
 		System.out.println("Waiting for client connection...");
-		Socket clientSocket = null;
 	
 		try {
 	
 			while(true) {
 				
-				clientSocket = serverSocket.accept();
+			
 				System.out.println("New client connection established...");
 				
-				sendData = new PrintWriter(clientSocket.getOutputStream(), true);
-				readData = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));		
+				sendData = new PrintWriter(serverSocket.getOutputStream(), true);
+				readData = new BufferedReader(new InputStreamReader(serverSocket.getInputStream()));		
 				
 				String command = readData.readLine(); 
 				System.out.println("Client selected command:" + command);
@@ -203,7 +202,6 @@ class ServerThread extends Thread {
 			try {
 				
 				serverSocket.close();
-				clientSocket.close();
 				System.exit(0);
 				
 			} catch (IOException e) {
