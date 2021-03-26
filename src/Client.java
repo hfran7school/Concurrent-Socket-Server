@@ -58,7 +58,7 @@ public class Client {
 				
 					//try {
 						
-						clientPool[i];
+					//	clientPool[i];
 						
 					//} catch (InterruptedException e) {
 					
