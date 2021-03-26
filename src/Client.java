@@ -55,15 +55,6 @@ public class Client {
 					clientPool[i] = new ClientThread(ip, port, command);
 					System.out.println("Client number: " + (i + 1));
 					clientPool[i].start(); 
-				
-					//try {
-						
-						clientPool[i];
-						
-					//} catch (InterruptedException e) {
-					
-					//	e.printStackTrace();
-					//}
 					
 					System.out.println();
 					totalTimes.add(clientPool[i].getTurnAround());

@@ -26,8 +26,7 @@ public class Server {
 		int port = getServerPort();
 		ServerSocket sSocket = new ServerSocket(port);
 		
-		while(true) {
-			
+		while(true) {	
 			Socket sock = sSocket.accept();
 			System.out.println("New [SERVER]] connection established");
 			new Thread(new ServerThread(sock)).start();
@@ -82,11 +81,7 @@ class ServerThread extends Thread {
 		
 		System.out.println("Waiting for client connection...");
 	
-		try {
-	
-			while(true) {
-				
-			
+		try {	
 				System.out.println("New client connection established...");
 				
 				sendData = new PrintWriter(serverSocket.getOutputStream(), true);
@@ -191,8 +186,6 @@ class ServerThread extends Thread {
 						return;
 				
 					}
-			} 
-		
 		} catch (IOException e){
 			e.printStackTrace();
 			
