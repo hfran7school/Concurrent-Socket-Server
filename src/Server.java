@@ -196,7 +196,6 @@ class ServerThread extends Thread {
 			try {
 				
 				serverSocket.close();
-				System.exit(0);
 				
 			} catch (IOException e) {
 				e.printStackTrace();
