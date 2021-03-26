@@ -32,6 +32,7 @@ public class Server {
 			new Thread(new ServerThread(sock)).start();
 		}
 	}
+	
 		
 	/**
 	 * This method is responsible for getting the port number from the user
