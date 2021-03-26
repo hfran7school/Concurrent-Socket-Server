@@ -23,10 +23,15 @@ public class Server {
 		
 		System.out.println("Welcome to our Concurrent Socket Server");
 		
-		
 		int port = getServerPort();
-		ServerThread singleServer = new ServerThread(port);
-		singleServer.start();
+		ServerSocket sSocket = new ServerSocket(port);
+		
+		while(true) {
+			
+			Socket sock = sSocket.accept();
+			System.out.println("New [SERVER]] connection established");
+			new Thread(new ServerThread(sock)).start();
+		}
 	}
 		
 	/**
