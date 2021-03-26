@@ -67,14 +67,12 @@ public class Server {
 
 class ServerThread extends Thread {
 	
-	private ServerSocket serverSocket;
-	private int port;
+	private Socket serverSocket;
 	private PrintWriter sendData;
 	private BufferedReader readData;
 	
-	public ServerThread(int port) throws IOException {
-		this.serverSocket = new ServerSocket(port);
-		this.port = port;
+	public ServerThread(Socket sock) throws IOException {
+		serverSocket = sock;
 	}
 
 	/*
