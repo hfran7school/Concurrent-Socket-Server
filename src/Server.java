@@ -21,7 +21,7 @@ public class Server {
 	 */
 	public static void main(String[] args) throws IOException {
 		
-		System.out.println("Welcome to our Iterative Socket Server");
+		System.out.println("Welcome to our Concurrent Socket Server");
 		
 		int port = getServerPort();
 		ServerThread singleServer = new ServerThread(port);
