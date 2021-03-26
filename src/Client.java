@@ -56,14 +56,14 @@ public class Client {
 					System.out.println("Client number: " + (i + 1));
 					clientPool[i].start(); 
 				
-					try {
+					//try {
 						
-						clientPool[i].join();
+						clientPool[i];
 						
-					} catch (InterruptedException e) {
+					//} catch (InterruptedException e) {
 					
-						e.printStackTrace();
-					}
+					//	e.printStackTrace();
+					//}
 					
 					System.out.println();
 					totalTimes.add(clientPool[i].getTurnAround());
