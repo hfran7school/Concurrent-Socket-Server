@@ -57,16 +57,24 @@ public class Client {
 					clientPool[i].start(); 
 					
 					System.out.println();
+				}
+				
+				for(int i = 0; i < clientCount; i++) {
+					try {
+						clientPool[i].join();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					totalTimes.add(clientPool[i].getTurnAround());
 				}
 				
-				int totalTime = 0;
-				
+				long totalTime = 0;
 				for(int i = 0; i < totalTimes.size(); i++) {
 					totalTime += totalTimes.get(i);
 				}
 				
-				int meanTotalTime = totalTime / totalTimes.size();
+				long meanTotalTime = totalTime / (long) clientCount;
 				
 				System.out.println("-------------------------------");
 				System.out.println("Average turn around time: " + meanTotalTime + "ms");
