@@ -34,7 +34,6 @@ class ClientThread extends Thread {
 		try {
 			
 			String response = "";
-			System.out.println("-------------------");
 			
 			long startTime = System.currentTimeMillis();
 

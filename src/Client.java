@@ -53,10 +53,7 @@ public class Client {
 				for(int i = 0; i < clientCount; i++) {
 					
 					clientPool[i] = new ClientThread(ip, port, command);
-					System.out.println("Client number: " + (i + 1));
 					clientPool[i].start(); 
-					
-					System.out.println();
 				}
 				
 				for(int i = 0; i < clientCount; i++) {
