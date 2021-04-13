@@ -6,7 +6,6 @@
  * 
  * @version 2-26-2021
  */
-
 import java.io.*;
 import java.net.*;
 import java.text.SimpleDateFormat;
@@ -19,13 +18,15 @@ public class Server {
 	 * @param args
 	 * @throws IOException
 	 */
+	
+	
 	public static void main(String[] args) throws IOException {
 		
 		System.out.println("Welcome to our Concurrent Socket Server");
 		
 		int port = getServerPort();
 		ServerSocket sSocket = new ServerSocket(port);
-		
+				
 		while(true) {	
 			Socket sock = sSocket.accept();
 			System.out.println("New [SERVER]] connection established");
@@ -79,6 +80,7 @@ class ServerThread extends Thread {
 	 * responsible for running the server and accepting client commands
 	 */
 	public void run() {
+		
 		
 		System.out.println("Waiting for client connection...");
 	
