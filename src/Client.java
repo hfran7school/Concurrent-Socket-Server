@@ -50,6 +50,7 @@ public class Client {
 				
 				ClientThread[] clientPool = new ClientThread[clientCount];
 				
+				long startTime_concur = System.currentTimeMillis();
 				for(int i = 0; i < clientCount; i++) {
 					
 					clientPool[i] = new ClientThread(ip, port, command);
@@ -65,6 +66,7 @@ public class Client {
 					}
 					totalTimes.add(clientPool[i].getTurnAround());
 				}
+				long totalTime_concur = (System.currentTimeMillis()) - startTime_concur;
 				
 				long totalTime = 0;
 				for(int i = 0; i < totalTimes.size(); i++) {
@@ -75,7 +77,7 @@ public class Client {
 				
 				System.out.println("-------------------------------");
 				System.out.println("Average turn around time: " + meanTotalTime + "ms");
-				System.out.println("Total turn around time: " + totalTime + "ms");
+				System.out.println("Total turn around time: " + totalTime_concur + "ms");
 				System.out.println("-------------------------------");
 				System.out.println();
 				
