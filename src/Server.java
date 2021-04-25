@@ -186,7 +186,8 @@ class ServerThread extends Thread {
 						sendData.println("[COMPLETED]");
 						sendData.close();
 						readData.close();
-						return;
+						serverSocket.close();
+						System.exit(0);
 				
 					}
 		} catch (IOException e){
